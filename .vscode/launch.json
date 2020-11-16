@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "(gdb) Launch", 
+        "type": "cppdbg",
+        /* 请求配置类型，可以为launch（启动）或attach（附加） */
+        "request": "launch", 
+        /* 将要进行调试的程序的路径 */
+        "program": "${fileDirname}/${fileBasenameNoExtension}.exe", 
+        /* 程序调试时传递给程序的命令行参数，一般设为空即可 */
+        "args": [], 
+        /* 设为true时程序将暂停在程序入口处，相当于在main上打断点 */
+        "stopAtEntry": false, 
+        /* 调试程序时的工作目录，此为工作区文件夹；改成${fileDirname}可变为文件所在目录 */
+        "cwd": "${workspaceFolder}", 
+        "environment": [], 
+        /* 使用单独的cmd窗口，与其它IDE一致；为false时使用内置终端 */
+        "externalConsole": true,
+        "internalConsoleOptions": "neverOpen", 
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb.exe",
+        "setupCommands": [
+            { 
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": false
+            }
+        ],
+        /*  调试会话开始前执行的任务，一般为编译程序。与tasks.json的label相对应 */
+        "preLaunchTask": "Compile"
+    }]
+}
